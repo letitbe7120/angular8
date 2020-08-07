@@ -1,3 +1,4 @@
+import { EditnotesService } from './../notesedit/editnotes/editnotes.service';
 import { notesInterface } from './../notesform/noteinterface';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NotesService } from './../notes.service';
@@ -19,7 +20,8 @@ export class NotesComponent implements OnInit {
   constructor(
     private notesService: NotesService,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private edit:EditnotesService
   ) {}
 
   ngOnInit(): void {
@@ -59,7 +61,8 @@ export class NotesComponent implements OnInit {
   }
 
   editNotes(rowno: string) {
-    this.router.navigate(['notesedit', rowno]);
+    this.edit.seteditid(rowno);
+    this.router.navigate(['notesedit']);
   }
   onSubmit() {
     this.router.navigate(['/notesform']);

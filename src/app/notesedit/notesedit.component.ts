@@ -1,3 +1,7 @@
+import { NgForm } from '@angular/forms';
+import { notesInterface } from './../notesform/noteinterface';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { EditnotesService } from './editnotes/editnotes.service';
 import { NotesService } from './../notes.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouteReuseStrategy, Router } from '@angular/router';
@@ -9,20 +13,17 @@ import{Notes} from '../notes' ;
 })
 export class NoteseditComponent implements OnInit {
     rowno: number;
+    editid:string
     notes:Notes;
-  constructor(private route:ActivatedRoute,private router:Router,
-    private notesService:NotesService) { }
+    editbyid:notesInterface
+  constructor(private route:ActivatedRoute,private router:Router,private edit:EditnotesService,
+    private notesService:NotesService ,private db:AngularFirestore) { }
 
   ngOnInit()  {
-    this.notes = new Notes();
+    this.editid=this.edit.geteditid();
+    console.log(this.editid);
 
-    this.rowno = this.route.snapshot.params['rowno'];
-    
-    this.notesService.getNotes(this.rowno)
-      .subscribe(data => {
-        console.log(data)
-        this.notes = data;
-      }, error => console.log(error));
+
   }
   editNotes() {
     this.notesService.editNotes(this.rowno, this.notes)
@@ -31,8 +32,21 @@ export class NoteseditComponent implements OnInit {
     this.gotoList();
   }
 
-  onSubmit() {
-    this.editNotes();    
+  onSubmit(f:NgForm) {
+    this.editbyid = {
+      notetext: f.value.notetext,
+      notetype: f.value.notetype,
+      noteoperation: f.value.noteoperation,
+      noteimportance: f.value.noteimportance,
+    };
+    this.db.doc(`Notes/${this.editid}`).update(this.editbyid).then(re=>{
+      console.log("Updated");
+
+    }).catch(re=>{
+      console.log("Failed");
+
+    })
+    this.editNotes();
   }
 
   gotoList() {

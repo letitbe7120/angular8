@@ -1,42 +1,55 @@
 <router-outlet></router-outlet>
 <table>
-<tr>
-<th>
-<i class="fas fa-table"></i>
-Case/Loan Vendor
+  <tr>
+    <th>
+      <i class="fas fa-table"></i>
+      Case/Loan Vendor
 
-<div class="text-left">
-  <br>
-<button (click)="onSubmit()" type="button" class="btn btn-primary">Add Loan Vendor</button>
-</div>
-<br>
-<div class="table-responsive">
-    <table class="table table-bordered" >
-      <thead>
-        <tr class="bg-primary text-light" >
-          <th>Row No</th>
-          <th>Delete</th>
-          <th>Edit</th>
-          <th>Vendor Company Name </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let loanvendor of loanvendors| async">
-          <td>{{loanvendor.rowno}}</td>
-         
-          <td><button (click)="deleteLoanvendor(loanvendor.rowno)" ><i class="fas fa-dustbin"></i></button></td>
-             <td><button (click)="editLoanvendor(loanvendor.rowno)"  ><i class="fas fa-pen"></i></button></td>
-            <td>{{loanvendor.vendorcompany}} </td>
-        </tr>
-      </tbody>
-</table>
-    </div>
-   
-    <div class="text-right"> 
-      <button (click)="onBack()" type="button" class="btn btn-secondary btn">Back</button>&nbsp;
-      <button (click)="onNext()" type="button" class="btn btn-primary ">Next</button>
-  
+      <div class="text-left">
+        <br />
+        <button (click)="onSubmit()" type="button" class="btn btn-primary">
+          Add Loan Vendor
+        </button>
       </div>
-</th>
- </tr>
+      <br />
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="bg-primary text-light">
+              <th>Row No</th>
+              <th>Delete</th>
+              <th>Edit</th>
+              <th>Vendor Company Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let loanvendor of loanvendors ">
+              <td>{{ loanvendor.rowno }}</td>
+
+              <td>
+                <button (click)="deleteLoanvendor(loanvendor.id)">
+                  <i class="fas fa-dustbin"></i>
+                </button>
+              </td>
+              <td>
+                <button (click)="editLoanvendor(loanvendor.id)">
+                  <i class="fas fa-pen"></i>
+                </button>
+              </td>
+              <td>{{ loanvendor.loanCompany }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-right">
+        <button (click)="onBack()" type="button" class="btn btn-secondary btn">
+          Back</button
+        >&nbsp;
+        <button (click)="onNext()" type="button" class="btn btn-primary">
+          Next
+        </button>
+      </div>
+    </th>
+  </tr>
 </table>
