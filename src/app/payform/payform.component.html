@@ -3,15 +3,15 @@
 <br />
 <br />
 
-<div class="text-leftt">
-  <button (click)="onSubmit()" class="btn btn-primary">Save</button>&nbsp;
-  <button (click)="onCancel()" type="button" class="btn btn-secondary">
-    Cancel
-  </button>
-</div>
-<br />
-<br />
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="text-leftt">
+    <button type="submit" class="btn btn-primary">Save</button>&nbsp;
+    <button (click)="onCancel()" type="button" class="btn btn-secondary">
+      Cancel
+    </button>
+  </div>
+  <br />
+  <br />
   <div class="row justify-content-center">
     <div class="col-auto">
       <table class="table table-bordered">
@@ -32,7 +32,7 @@
                         class="form-control"
                         id="paytype"
                         required
-                        [(ngModel)]="payplan.paytype"
+                        ngModel
                         name="paytype"
                         ><option selected>--Select--</option
                         ><option>Line of Credit</option
@@ -48,7 +48,7 @@
                         class="form-control"
                         id="monthlypayment"
                         required
-                        [(ngModel)]="payplan.monthlypayment"
+                        ngModel
                         name="monthlypayment"
                       />
                     </div>
@@ -59,7 +59,7 @@
                         class="form-control"
                         id="grosspayment"
                         required
-                        [(ngModel)]="payplan.grosspayment"
+                        ngModel
                         name="grosspayment"
                       />
                     </div>
@@ -70,7 +70,7 @@
                         class="form-control"
                         id="modified"
                         required
-                        [(ngModel)]="payplan.modified"
+                        ngModel
                         name="modified"
                       />
                     </div>
@@ -82,7 +82,7 @@
                         class="form-control"
                         id="ratetype"
                         required
-                        [(ngModel)]="payplan.ratetype"
+                        ngModel
                         name="ratetype"
                         ><option selected>--Select--</option
                         ><option>Annual</option
@@ -97,7 +97,7 @@
                         class="form-control"
                         id="disbusrsment"
                         required
-                        [(ngModel)]="payplan.disbusrsment"
+                        ngModel
                         name="disbusrsment"
                       />
                     </div>
@@ -107,7 +107,7 @@
                         class="form-control"
                         id="round"
                         required
-                        [(ngModel)]="payplan.round"
+                        ngModel
                         name="round"
                         ><option selected>--Select--</option
                         ><option>Yes</option
@@ -121,7 +121,7 @@
                         class="form-control"
                         id="modified"
                         required
-                        [(ngModel)]="payplan.modified"
+                        ngModel
                         name="modified"
                       />
                     </div>
@@ -134,7 +134,7 @@
                         class="form-control"
                         id="creditline"
                         required
-                        [(ngModel)]="payplan.creditline"
+                        ngModel
                         name="creditline"
                       />
                     </div>
@@ -145,7 +145,7 @@
                         class="form-control"
                         id="payterm"
                         required
-                        [(ngModel)]="payplan.payterm"
+                        ngModel
                         name="payterm"
                       />
                     </div>
@@ -156,7 +156,7 @@
                         class="form-control"
                         id="lifetime"
                         required
-                        [(ngModel)]="payplan.lifetime"
+                        ngModel
                         name="lifetime"
                       />
                     </div>
@@ -167,7 +167,7 @@
                         class="form-control"
                         id="creditside"
                         required
-                        [(ngModel)]="payplan.creditside"
+                        ngModel
                         name="creditside"
                       />
                     </div>
@@ -180,7 +180,7 @@
                         class="form-control"
                         id="netavailable"
                         required
-                        [(ngModel)]="payplan.netavailable"
+                        ngModel
                         name="netavailable"
                       />
                     </div>
@@ -191,7 +191,7 @@
                         class="form-control"
                         id="disbursmentterm"
                         required
-                        [(ngModel)]="payplan.disbursmentterm"
+                        ngModel
                         name="disbursmentterm"
                       />
                     </div>
@@ -202,7 +202,7 @@
                         class="form-control"
                         id="semipayment"
                         required
-                        [(ngModel)]="payplan.semipayment"
+                        ngModel
                         name="semipayment"
                       />
                     </div>
@@ -213,7 +213,7 @@
                         class="form-control"
                         id="service"
                         required
-                        [(ngModel)]="payplan.service"
+                        ngModel
                         name="service"
                       />
                     </div>
@@ -228,7 +228,7 @@
                         class="form-control"
                         id="credlineadj"
                         required
-                        [(ngModel)]="payplan.credlineadj"
+                        ngModel
                         name="credlineadj"
                       />
                     </div>
@@ -239,7 +239,7 @@
                         class="form-control"
                         id="periodic"
                         required
-                        [(ngModel)]="payplan.periodic"
+                        ngModel
                         name="periodic"
                       />
                     </div>
@@ -250,7 +250,7 @@
                         class="form-control"
                         id="lineofcredit"
                         required
-                        [(ngModel)]="payplan.lineofcredit"
+                        ngModel
                         name="lineofcredit"
                       />
                     </div>
@@ -261,7 +261,7 @@
                         class="form-control"
                         id="intrestrate"
                         required
-                        [(ngModel)]="payplan.intrestrate"
+                        ngModel
                         name="intrestrate"
                       />
                     </div>
@@ -274,7 +274,7 @@
                         class="form-control"
                         id="ratemargin"
                         required
-                        [(ngModel)]="payplan.ratemargin"
+                        ngModel
                         name="ratemargin"
                       />
                     </div>
@@ -285,7 +285,7 @@
                         class="form-control"
                         id="basispoints"
                         required
-                        [(ngModel)]="payplan.basispoints"
+                        ngModel
                         name="basispoints"
                       />
                     </div>
@@ -296,7 +296,7 @@
                         class="form-control"
                         id="actiondate"
                         required
-                        [(ngModel)]="payplan.actiondate"
+                        ngModel
                         name="actiondate"
                       />
                     </div>
@@ -309,7 +309,7 @@
                         class="form-control"
                         id="changeplan"
                         required
-                        [(ngModel)]="payplan.changeplan"
+                        ngModel
                         name="changeplan"
                       />
                     </div>

@@ -1,0 +1,26 @@
+export interface PayformInterface {
+ paytype:string;
+  ratetype:string;
+  creditline:string;
+  netavailable:string;
+  credlineadj:string;
+  ratemargin:string;
+ monthlypayment:string;
+  disbusrsment:string;
+  paytenure:string;
+  payterm:string;
+  disbursmentterm:string;
+ periodic:string;
+ basispoints:string;
+  grosspayment:string;
+  round:string;
+  lifetime:string;
+  semipayment:string;
+ lineofcredit:string;
+ actiondate:string;
+  modified:string;
+  creditside:string;
+  service:string;
+  intrestrate:string;
+ changeplan:string;
+}

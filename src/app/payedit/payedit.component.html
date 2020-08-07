@@ -1,104 +1,325 @@
-<h3>Edit Payplan</h3>
-<table class="table  table-bordered">
-        <tbody>
- <i class="fas fa-table"></i>
- <b>
-Loan Pay Plan</b>
-<br>
-    <br>
-    <form (ngSubmit)="onSubmit()">
+<i class="fas fa-table"></i>
+<b> Loan Pay Plan</b>
+<br />
+<br />
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="text-leftt">
     <button type="submit" class="btn btn-primary">Save</button>&nbsp;
-    <button (click)="onCancel()" type="button" class="btn btn-secondary">Cancel</button>
-    <br>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col-auto">
-   <div class="container-fluid  ">
-    <table class="table  table-bordered table-sm">
-<thead class="thead-info">
-
-<tr class="bg-primary text-light" >
-<th>Loan Payplan Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-      
-
-    
-            <div class="form-group text-info">
-                <div class="row">
-                        <label class="col-sm-1 ">Payplan Type:</label>
-                    <div class="col-sm-2"> <select id="paytype" required [(ngModel)]="payplan.paytype" name="paytype" ><option selected>--Select--</option><option >Line of Credit</option><option >Term</option><option >Tenure</option><option >Modified Term</option>
-                            </select></div>
-                         <label class="col-sm-1 ">Net Monthly Payment:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="monthlypayment" required [(ngModel)]="payplan.monthlypayment" name="monthlypayment"></div>
-                 <label class="col-sm-1 ">Gross Monthly Payment:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="grosspayment" required [(ngModel)]="payplan.grosspayment" name="grosspayment"></div>
-                    <label class="col-sm-1 ">Modified Tenure:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="modified" required [(ngModel)]="payplan.modified" name="modified"></div>
+    <button (click)="onCancel()" type="button" class="btn btn-secondary">
+      Cancel
+    </button>
+  </div>
+  <br />
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-bordered">
+        <thead class="thead-info">
+          <tr class="bg-primary text-light">
+            <th>Loan Payplan Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="container-fluid">
+                <div class="form-group text-info">
+                  <div class="row">
+                    <label class="col-sm-1">Payplan Type:</label>
+                    <div class="col-sm-2">
+                      <select
+                        class="form-control"
+                        id="paytype"
+                        required
+                        ngModel
+                        name="paytype"
+                        ><option selected>--Select--</option
+                        ><option>Line of Credit</option
+                        ><option>Term</option
+                        ><option>Tenure</option
+                        ><option>Modified Term</option>
+                      </select>
+                    </div>
+                    <label class="col-sm-1">Net Monthly Payment:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="monthlypayment"
+                        required
+                        ngModel
+                        name="monthlypayment"
+                      />
+                    </div>
+                    <label class="col-sm-1">Gross Monthly Payment:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="grosspayment"
+                        required
+                        ngModel
+                        name="grosspayment"
+                      />
+                    </div>
+                    <label class="col-sm-1">Modified Tenure:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="modified"
+                        required
+                        ngModel
+                        name="modified"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-1">Rate Type:</label>
+                    <div class="col-sm-2">
+                      <select
+                        class="form-control"
+                        id="ratetype"
+                        required
+                        ngModel
+                        name="ratetype"
+                        ><option selected>--Select--</option
+                        ><option>Annual</option
+                        ><option>Fixed</option
+                        ><option>Monthly</option></select
+                      >
+                    </div>
+                    <label class="col-sm-1">Disbursement Tenure:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="disbusrsment"
+                        required
+                        ngModel
+                        name="disbusrsment"
+                      />
+                    </div>
+                    <label class="col-sm-1">Round to 1/8th:</label>
+                    <div class="col-sm-2">
+                      <select
+                        class="form-control"
+                        id="round"
+                        required
+                        ngModel
+                        name="round"
+                        ><option selected>--Select--</option
+                        ><option>Yes</option
+                        ><option>No</option></select
+                      >
+                    </div>
+                    <label class="col-sm-1">Modified Term:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="modified"
+                        required
+                        ngModel
+                        name="modified"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-1">Credit Line Original-Setup:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="creditline"
+                        required
+                        ngModel
+                        name="creditline"
+                      />
+                    </div>
+                    <label class="col-sm-1">Pay Plan Term (in months):</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="payterm"
+                        required
+                        ngModel
+                        name="payterm"
+                      />
+                    </div>
+                    <label class="col-sm-1">Lifetime Cap:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lifetime"
+                        required
+                        ngModel
+                        name="lifetime"
+                      />
+                    </div>
+                    <label class="col-sm-1">Credit Line Set A side:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="creditside"
+                        required
+                        ngModel
+                        name="creditside"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-1">Net Available (First Yr.):</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="netavailable"
+                        required
+                        ngModel
+                        name="netavailable"
+                      />
+                    </div>
+                    <label class="col-sm-1">Disbursement Term:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="disbursmentterm"
+                        required
+                        ngModel
+                        name="disbursmentterm"
+                      />
+                    </div>
+                    <label class="col-sm-1">Semi Annual Payment:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="semipayment"
+                        required
+                        ngModel
+                        name="semipayment"
+                      />
+                    </div>
+                    <label class="col-sm-1">Service Fee Set Aside:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="service"
+                        required
+                        ngModel
+                        name="service"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-1"
+                      >Credit Line Original-Setup Adj.:</label
+                    >
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="credlineadj"
+                        required
+                        ngModel
+                        name="credlineadj"
+                      />
+                    </div>
+                    <label class="col-sm-1">Periodic Cap:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="periodic"
+                        required
+                        ngModel
+                        name="periodic"
+                      />
+                    </div>
+                    <label class="col-sm-1">Line of Credit:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lineofcredit"
+                        required
+                        ngModel
+                        name="lineofcredit"
+                      />
+                    </div>
+                    <label class="col-sm-1">Next Interest Rate:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="intrestrate"
+                        required
+                        ngModel
+                        name="intrestrate"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-1">Rate Margin:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ratemargin"
+                        required
+                        ngModel
+                        name="ratemargin"
+                      />
+                    </div>
+                    <label class="col-sm-1">Basis Points:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="basispoints"
+                        required
+                        ngModel
+                        name="basispoints"
+                      />
+                    </div>
+                    <label class="col-sm-1">Action Start Date:</label>
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="actiondate"
+                        required
+                        ngModel
+                        name="actiondate"
+                      />
+                    </div>
+                    <label class="col-sm-1"
+                      >Credit Line Change Of Plan Adj:</label
+                    >
+                    <div class="col-sm-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="changeplan"
+                        required
+                        ngModel
+                        name="changeplan"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div class="row">
-                    <label class="col-sm-1 ">Rate Type:</label>
-                    <div class="col-sm-2"><select class="form-control "id="ratetype" required [(ngModel)]="payplan.ratetype" name="ratetype" ><option selected>--Select--</option><option>Annual</option><option >Fixed</option><option >Monthly</option></select>
-                        </div>
-                     <label class="col-sm-1 ">Disbursement Tenure:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="disbusrsment" required [(ngModel)]="payplan.disbusrsment" name="disbusrsment"></div>
-                        <label class="col-sm-1 ">Round to 1/8th:</label>
-                        <div class="col-sm-2"> <select class="form-control " id="round" required [(ngModel)]="payplan.round" name="round"><option selected>--Select--</option><option >Yes</option><option >No</option></select></div>
-                         <label class="col-sm-1 ">Modified Term:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="modified" required [(ngModel)]="payplan.modified" name="modified"></div>
-                </div>
-                <div class="row"><label class="col-sm-1 ">Credit Line Original-Setup:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control "id="creditline" required [(ngModel)]="payplan.creditline" name="creditline"></div>
-                <label class="col-sm-1 ">Pay Plan Term (in months):</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="payterm" required [(ngModel)]="payplan.payterm" name="payterm"></div>
-                <label class="col-sm-1 ">Lifetime Cap:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="lifetime" required [(ngModel)]="payplan.lifetime" name="lifetime"></div>
-                <label class="col-sm-1 ">Credit Line Set A side:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="creditside" required [(ngModel)]="payplan.creditside" name="creditside"></div>
-                </div>
-                <div class="row"><label class="col-sm-1 ">Net Available (First Yr.):</label>
-                        <div class="col-sm-2"><input type="text" class="form-control "id="netavailable" required [(ngModel)]="payplan.netavailable" name="netavailable"></div>
-                <label class="col-sm-1 ">Disbursement Term:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="disbursmentterm" required [(ngModel)]="payplan.disbursmentterm" name="disbursmentterm"></div>
-                <label class="col-sm-1 ">Semi Annual Payment:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="semipayment" required [(ngModel)]="payplan.semipayment" name="semipayment"></div>
-                <label class="col-sm-1 ">Service Fee Set Aside:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="service" required [(ngModel)]="payplan.service" name="service"></div>
-                </div>
-                <div class="row">
-                    <label class="col-sm-1 ">Credit Line Original-Setup Adj.:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="credlineadj" required [(ngModel)]="payplan.credlineadj" name="credlineadj"></div>
-                <label class="col-sm-1 ">Periodic Cap:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="periodic" required [(ngModel)]="payplan.periodic" name="periodic"></div>
-                <label class="col-sm-1 ">Line of Credit:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="lineofcredit" required [(ngModel)]="payplan.lineofcredit" name="lineofcredit"></div>
-                <label class="col-sm-1 ">Next Interest Rate:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control "id="intrestrate" required [(ngModel)]="payplan.intrestrate" name="intrestrate"></div>
-                </div>
-                <div class="row"><label class="col-sm-1 ">Rate Margin:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control" id="ratemargin" required [(ngModel)]="payplan.ratemargin" name="ratemargin"></div>
-                <label class="col-sm-1 ">Basis Points:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="basispoints" required [(ngModel)]="payplan.basispoints" name="basispoints"></div>
-                <label class="col-sm-1 ">Action Start Date:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="actiondate" required [(ngModel)]="payplan.actiondate" name="actiondate"></div>
-                <label class="col-sm-1 ">Credit Line Change Of Plan Adj:</label>
-                        <div class="col-sm-2"><input type="text" class="form-control " id="changeplan" required [(ngModel)]="payplan.changeplan" name="changeplan"></div>
-                </div>
-            </div>
-      
-   
-</td>
-</tr>
-    
-</tbody>
-    </table>
-</div>
-</div>
-</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </form>
- </tbody>
-
-</table>

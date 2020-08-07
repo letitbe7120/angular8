@@ -34,33 +34,33 @@
                   <th >Round to 1/8th</th>
                   <th >Lifetime Cap</th>
                   <th >Semi Annual Payment</th>
-                  <th >Line of Cedit</th>    
+                  <th >Line of Cedit</th>
                   <th >Action Start Date</th>
-                  <th >Modified Tenure</th>    
+                  <th >Modified Tenure</th>
                   <th >Modified Term</th>
                   <th >Credit Line Set A Side</th>
-                  <th >Service Fee Set Aside</th>     
+                  <th >Service Fee Set Aside</th>
                   <th >Next Interest Rate</th>
                   <th >Credit Line Change of Plan Adj.</th>
-                    
+
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let payplan of payplans| async">
+                <tr *ngFor="let payplan of payplan1">
                   <td>{{payplan.rowno}}</td>
-                 
-                  <td><button (click)="deletePayplan(payplan.rowno)" ><i class="fas fa-dustbin"></i></button></td>
-                     <td><button (click)="editPayplan(payplan.rowno)"  ><i class="fas fa-pen"></i></button></td>
-                    <td>{{payplan.paytype}} </td>
+                  <td><button (click)="deletePayplan(payplan.id)" >
+                  <i class="fas fa-dustbin"></i></button></td>
+                  <td><button (click)="editPayplan(payplan.rowno)"  ><i class="fas fa-pen"></i></button></td>
+                  <td>{{payplan.paytype}} </td>
                   <td>{{payplan.ratetype}}</td>
-                  <td>{{payplan.creditlineadj}}</td>
+                  <td>{{payplan.creditline}}</td>
                   <td>{{payplan.ratemargin}}</td>
                   <td>{{payplan.monthlypayment}} </td>
                   <td>{{payplan.disbusrsment}}</td>
                   <td>{{payplan.paytenure}}</td>
                   <td>{{payplan.payterm}}</td>
                   <td>{{payplan.disbursmentterm}} </td>
-                  <td>{{payplan.peridoic}}</td>
+                  <td>{{payplan.periodic}}</td>
                   <td>{{payplan.basispoints}}</td>
                   <td>{{payplan.grosspayment}}</td>
                   <td>{{payplan.round}} </td>
@@ -77,14 +77,13 @@
               </tbody>
         </table>
             </div>
-            <div class="text-right"> 
+            <div class="text-right">
               <button (click)="onBack()" type="button" class="btn btn-secondary btn">Back</button>&nbsp;
               <button (click)="onNext()" type="button" class="btn btn-primary ">Next</button>
-          
+
               </div>
                 </div>
         </th>
-         </tr>
-            
+</tr>
 </table>
 
