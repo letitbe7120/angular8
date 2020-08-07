@@ -18,7 +18,8 @@ export class PayplanComponent implements OnInit {
   constructor(
     private payplanService: PayplanService,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private service:PayplanService
   ) {}
 
   ngOnInit(): void {
@@ -46,8 +47,9 @@ export class PayplanComponent implements OnInit {
     })
   }
 
-  editPayplan(rowno: number) {
-    this.router.navigate(['payedit', rowno]);
+  editPayplan(id: string) {
+    this.service.setEditId(id);
+    this.router.navigate(['payedit']);
   }
   onSubmit() {
     this.router.navigate(['/payform']);

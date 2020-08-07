@@ -9,6 +9,13 @@ import { Injectable } from '@angular/core';
 export class PayplanService {
 
   private baseUrl = 'http://localhost:8080/payplan/';
+  editId:string
+  setEditId(id:string){
+    this.editId=id
+  }
+  geteditId(){
+   return this.editId
+  }
 
   constructor(private http: HttpClient) { }
 
