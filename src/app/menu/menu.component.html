@@ -1,0 +1,32 @@
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+<th>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Loan</button>&nbsp;
+</div>
+    <div class="btn-group">
+  <button type="button" class="btn btn-primary">Borrower/Contact</button>&nbsp;
+</div>
+        <div class="btn-group">
+  <input type="button" class="btn btn-primary" value="Notes" (click)="onSubmit()"/>&nbsp;
+</div>
+<div class="btn-group">
+  <button  (click)="onVendor()" type="button" class="btn btn-primary">Loan Vendor</button>&nbsp;
+</div>
+<div class="btn-group">
+  <input type="button" class="btn btn-primary" value="Loan Alert" (click)="onAlert()"/>&nbsp;
+</div>
+<div class="btn-group">
+  <input type="button" class="btn btn-primary" value="Loan Pay Plan" (click)="onPay()"/>&nbsp;
+</div>
+</th>
+</tr>
+
+</thead>
+<tbody>
+    <div class="container-fluid">
+    <router-outlet></router-outlet>
+    </div>
+</tbody>
+</table>

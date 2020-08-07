@@ -1,0 +1,90 @@
+<router-outlet></router-outlet>
+<table>
+    <tr>
+        <th>
+        <i class="fas fa-table"></i>
+        Case/Loan Pay Plan
+        <br>
+            <br>
+        <button (click)="onSubmit()" type="button" class="btn btn-primary">Add Pay Plan</button>
+        <br>
+            <br>
+            <div class="container p-1 testimonial-group">
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm text-sm ">
+              <thead>
+                <tr class="bg-primary text-light ">
+                  <th >Row No</th>
+                  <th >Delete</th>
+                  <th >Edit</th>
+                  <th >Pay Plan Type</th>
+                  <th >Rate Type</th>
+                  <th >Credit Line Original-Setup</th>
+                  <th >Net Available (First Yr.)</th>
+                  <th >Credit Line Original - Setup Adj.</th>
+                  <th >Rate Margin</th>
+                  <th >Net Monthly Payment</th>
+                  <th >Disbursement Tenure</th>
+                  <th >Payplan Tenure</th>
+                  <th >Pay Plan Term (in months)</th>
+                  <th >Disbursement Term</th>
+                  <th>Periodic Cap</th>
+                  <th>Basis Points</th>
+                  <th >Gross Monthly Payment</th>
+                  <th >Round to 1/8th</th>
+                  <th >Lifetime Cap</th>
+                  <th >Semi Annual Payment</th>
+                  <th >Line of Cedit</th>    
+                  <th >Action Start Date</th>
+                  <th >Modified Tenure</th>    
+                  <th >Modified Term</th>
+                  <th >Credit Line Set A Side</th>
+                  <th >Service Fee Set Aside</th>     
+                  <th >Next Interest Rate</th>
+                  <th >Credit Line Change of Plan Adj.</th>
+                    
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let payplan of payplans| async">
+                  <td>{{payplan.rowno}}</td>
+                 
+                  <td><button (click)="deletePayplan(payplan.rowno)" ><i class="fas fa-dustbin"></i></button></td>
+                     <td><button (click)="editPayplan(payplan.rowno)"  ><i class="fas fa-pen"></i></button></td>
+                    <td>{{payplan.paytype}} </td>
+                  <td>{{payplan.ratetype}}</td>
+                  <td>{{payplan.creditlineadj}}</td>
+                  <td>{{payplan.ratemargin}}</td>
+                  <td>{{payplan.monthlypayment}} </td>
+                  <td>{{payplan.disbusrsment}}</td>
+                  <td>{{payplan.paytenure}}</td>
+                  <td>{{payplan.payterm}}</td>
+                  <td>{{payplan.disbursmentterm}} </td>
+                  <td>{{payplan.peridoic}}</td>
+                  <td>{{payplan.basispoints}}</td>
+                  <td>{{payplan.grosspayment}}</td>
+                  <td>{{payplan.round}} </td>
+                  <td>{{payplan.lifetime}}</td>
+                  <td>{{payplan.semipayment}}</td>
+                  <td>{{payplan.lineofcredit}}</td>
+                  <td>{{payplan.actiondate}} </td>
+                  <td>{{payplan.modified}}</td>
+                  <td>{{payplan.creditside}}</td>
+                  <td>{{payplan.service}}</td>
+                  <td>{{payplan.intrestrate}}</td>
+                  <td>{{payplan.changeplan}}</td>
+                </tr>
+              </tbody>
+        </table>
+            </div>
+            <div class="text-right"> 
+              <button (click)="onBack()" type="button" class="btn btn-secondary btn">Back</button>&nbsp;
+              <button (click)="onNext()" type="button" class="btn btn-primary ">Next</button>
+          
+              </div>
+                </div>
+        </th>
+         </tr>
+            
+</table>
+

@@ -1,0 +1,78 @@
+    
+<table class="table  table-bordered">
+    <tbody>
+      
+        <tr>
+    <th>
+    <i class="fas fa-table"></i>
+    Loan Vendor
+    <form (ngSubmit)="onSubmit()">
+    <div class="text-leftt"> 
+   
+    <br>
+     
+    <button type="submit" class="btn btn-primary">Save</button>&nbsp;
+    <button (click)="onCancel()" type="button" class="btn btn-secondary">Cancel</button>
+    </div>
+    <br>
+<div class="container-fluid">
+    
+    <table class="table  table-bordered">
+    <thead class="thead-info">
+    
+    <tr class="bg-primary text-light" >
+    <th>Loan Vendor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>
+    
+    
+          <div class="form-group text-info">
+    
+    <br>
+    <div class="row">
+    <label class="col-sm-3">Vendor Company Name:</label>
+                            <div class="col-sm-4"><select class="form-control" id="vendorcompany" required [(ngModel)]="loanvendor.vendorcompany" name="vendorcompany" >
+                            <option selected>--Select--</option>
+                            <option>FRANK J MARTONE, P.C.</option> 
+    <option>Aaron J. Goldberg, PLC</option> 
+    <option>ALEXANDRIA CITY TREASURER</option> 
+    <option>Ameren UE</option> 
+    <option>Anderson, Maccoy & Orta </option> 
+    <option>ANSON TAX COLLECTOR</option> 
+    <option>Ashley Carter</option> 
+    <option>Atlanta City/Dekalb County Tax Commisioner</option> 
+    <option>Backus, Meyer, Solomon,Rood & Branch, LLP</option> 
+    <option>Baltimore City Tax Collector</option> 
+    <option>BALTIMORE COUNTY OFFICE OF FINANCEl</option> 
+    <option>Bartle, McGrane, Duffy & Jones</option> 
+    <option>BCM BUILDER CORP</option> 
+    <option>BEE HIVE INC</option> 
+    <option>Berkman Henoch Peterson & peddy, P.C.</option> 
+    <option>Bernard, Haffey & Bohnert Co. L.P.A</option> 
+    <option>Blanco Tackaberg Combs & matamoros</option> 
+    <option>Boston City Tax Collector</option> 
+    <option>Brewster C.S. Receiver of Taxes</option> 
+                            </select> 
+                            </div>
+    </div>
+    <br>
+    
+    </div>
+   
+         
+    </td>
+    </tr>
+        </tbody>
+            </table>
+            </div>
+        </form>
+            </th>
+            </tr>
+       
+            </tbody>
+            </table>
+            
+       

@@ -1,0 +1,47 @@
+<router-outlet></router-outlet>
+<table>
+    <tr>
+        <th>
+        <i class="fas fa-table"></i>
+        Case/Loan Notes
+        <br>
+            <br>
+        <button (click)="onSubmit()" type="button" class="btn btn-primary" >Add Notes</button>
+        <br>
+            <br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr class="bg-primary text-light">
+                  <th>Row No</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                  <th>Note Text</th>
+                  <th>Note Type</th>
+                  <th>Note Operation</th>
+                  <th>Note Importance</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let notes of notess| async">
+                  <td>{{notes.rowno}}</td>
+                 
+                  <td><button (click)="deleteNotes(notes.rowno)" ><i class="fas fa-dustbin"></i></button></td>
+                     <td><button (click)="editNotes(notes.rowno)"  ><i class="fas fa-pen"></i></button></td>
+                    <td>{{notes.notetext}} </td>
+                  <td>{{notes.notetype}}</td>
+                  <td>{{notes.noteoperation}}</td>
+                  <td>{{notes.noteimportance}}</td>
+                </tr>
+              </tbody>
+        </table>
+        <div class="text-right"> 
+        <button (click)="onBack()" type="button" class="btn btn-secondary btn">Back</button>&nbsp;
+        <button (click)="onNext()" type="button" class="btn btn-primary ">Next</button>
+    
+        </div>
+            </div>
+            </th>
+            </tr>
+</table>

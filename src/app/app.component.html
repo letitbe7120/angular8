@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+     <nav class="navbar navbar-expand-sm bg-warning navbar-dark">
+ 
+  <a class="navbar-brand text-info" href="#">OPTIAM HECM</a>
+       
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-search"></i>
+       Search
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-share-square"></i>
+       Servicing
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-share-square"></i>
+       Loss Mit/Pre FCL
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fas fa-landmark"></i>
+      Foreclosure
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-tags"></i>
+      Bankruptcy
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+         <i class="material-icons">explore</i>
+       Mortgage Release
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-folder-open"></i>
+      Other Sub Status
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fas fa-money-bill-alt"></i>
+       Accounting
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+        <i class="material-icons">explore</i>
+      Report
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+             <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fa fa-upload"></i>
+       More
+      </a>
+      <div class="dropdown-menu">
+        </div>
+        </div>
+       
+    </nav>
+    
+ <table class="table  table-bordered">
+<thead class="thead-info">
+<p class="bg-info text-dark"></p>
+<tr class="bg-primary" >
+<th>Add New Case Wizard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ <form >
+            <div class="form-group">
+                <div class="row">
+                        <label class="col-sm-1 ">Case#:</label>
+                        <div class="col-sm-2"><input type="text" select class="form-control" placeholder="981-3345623" ></div>
+                        <label class="col-sm-1 ">Case Program:</label>
+                        <div class="col-sm-2"><select class="form-control" ><option selected>--Select--</option> </select> </div>
+                        <label class="col-sm-1">Case Type:</label>
+                        <div class="col-sm-2"><select class="form-control" ><option selected>Select a case type</option></select></div>
+                        <label class="col-sm-1 ">Case Status:</label>
+                        <div class="col-sm-2"><input type="text" class="form-control" placeholder="OPEN-Open Loans" ></div>
+                </div>
+                <div class="row">
+                        <label class="col-sm-1 ">ARM Index:</label>
+                        <div class="col-sm-2"> <select class="form-control" ><option selected>Select ARM Index</option></select></div>
+                        <label class="col-sm-1 ">Orig Prin Amt:</label>
+                        <div class="col-sm-2"> <input type="text" class="form-control"placeholder="2000" ></div>
+                        <label class="col-sm-1 ">ARM Period:</label>
+                        <div class="col-sm-2"> <select class="form-control"><option selected>Select ARM Period</option></select></div>
+                </div>
+            </div>
+        </form>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="text-danger"> Note:Please, do not refresh the page otherwise the entered data will also be refreshed.</p>
+<div clas="container">
+  <app-menu></app-menu>
+</div>
+</body>
+<div class="footer bg-primary">
+  <p> &nbsp; &nbsp;OptiAM AR|Andromeda Systems Incorporated</p>
+</div>
+</html>
