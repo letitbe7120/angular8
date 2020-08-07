@@ -1,53 +1,73 @@
 <router-outlet></router-outlet>
 <table>
-<tr>
+  <tr>
     <th>
-    <i class="fas fa-table"></i>
-    Case/Loan Alert
-    <br>
-        <br>
-    <button (click)="onSubmit()" type="button" class="btn btn-primary">Add Loan Alert</button>
-    <br>
-        <br>
-    <div class="table-responsive">
+      <i class="fas fa-table"></i>
+      Case/Loan Alert
+      <br />
+      <br />
+      <button (click)="onSubmit()" type="button" class="btn btn-primary">
+        Add Loan Alert
+      </button>
+      <br />
+      <br />
+      <div class="table-responsive">
         <table class="table table-bordered table-sm">
-          <thead >
-            <tr class="bg-primary text-light" >
+          <thead>
+            <tr class="bg-primary text-light">
               <th>Row No</th>
               <th>Delete</th>
               <th>Edit</th>
               <th>Alert Date</th>
               <th>Alert Expiration Date</th>
-              <th>Custodial Care Indicator Alert </th>
-              <th> Alert Amt</th>
+              <th>Custodial Care Indicator Alert</th>
+              <th>Alert Amt</th>
               <th>Alert Note</th>
               <th>Alert Description</th>
               <th>Alert Severity</th>
               <th>Alert Status</th>
-                <th>Upload Status</th>
-             
+              <th>Upload Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let loanalert of loanalerts| async">
-              <td>{{loanalert.rowno}}</td>
-             
-              <td><button (click)="deleteNotes(notes.rowno)" ><i class="fas fa-dustbin"></i></button></td>
-                 <td><button (click)="editNotes(notes.rowno)"  ><i class="fas fa-pen"></i></button></td>
-                <td>{{loanalert.notetext}} </td>
-              <td>{{loanalert.notetype}}</td>
-              <td>{{loanalert.noteoperation}}</td>
-              <td>{{loanalert.noteimportance}}</td>
+            <tr *ngFor="let loanalert of loanalerts">
+              <td>{{ loanalert.rowno }}</td>
+
+              <td>
+                <button (click)="deleteLoanalert(loanalert.id)">
+                  <i class="fas fa-dustbin"></i>
+                </button>
+              </td>
+              <td>
+                <button (click)="editLoanalert(loanalert.id)">
+                  <i class="fas fa-pen"></i>
+                </button>
+              </td>
+              <td>{{ loanalert.alerttype }}</td>
+              <td>{{ loanalert.alertdate }}</td>
+              <td>{{ loanalert.alertexpdate }}</td>
+              <td>{{ loanalert.custindicator }}</td>
+                    <td>{{ loanalert.custindicator }}</td>
+                          <td>{{ loanalert.alertamt }}</td>
+                                <td>{{ loanalert.alertnote }}</td>
+
+                                      <td>{{ loanalert.alertdescription }}</td>
+                                            <td>{{ loanalert.alertseverity }}</td>
+                                                  <td>{{ loanalert.alertstatus }}</td>
+                                                  <td>{{loanalert.uploadstatus}}</td>
             </tr>
           </tbody>
-    </table>
-        </div>
-     
-        <div class="text-right"> 
-          <button (click)="onBack()" type="button" class="btn btn-secondary btn">Back</button>&nbsp;
-          <button (click)="onNext()" type="button" class="btn btn-primary ">Next</button>
-      
-          </div>
+        </table>
+      </div>
+
+      <div class="text-right">
+        <button (click)="onBack()" type="button" class="btn btn-secondary btn">
+          Back</button
+        >&nbsp;
+        <button (click)="onNext()" type="button" class="btn btn-primary">
+          Next
+        </button>
+      </div>
     </th>
-     </tr>
-    </table>  
+  </tr>
+</table>

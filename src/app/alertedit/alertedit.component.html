@@ -1,99 +1,192 @@
-<h3>Edit Loanalert</h3>
-<table class="table  table-bordered">
-    <tbody>
-        <tr>
-    <th>
-    <i class="fas fa-table"></i>
-    Loan Alert
-    <form (ngSubmit)="onSubmit()">
-    <div class="text-left"> 
-        <br>
-        <button type="submit" class="btn btn-primary">Save</button>&nbsp;
-        <button (click)="onCancel()" type="button" class="btn btn-secondary">Cancel</button>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-auto">
-       <table class="table  table-bordered ">
-    <thead class="thead-info">
-    <tr class="bg-primary text-light" >
-    <th>Loan Alert Information</th>
-    </tr>
-    </thead>
-    <tbody>
+<table class="table table-bordered">
+  <tbody>
     <tr>
-    <td>
-        <div class="container-fluid">
-   
-    
-                <div class="form-group text-info">
-                    <div class="row">
-                            <label class="col-sm-3 ">Alert Type: </label>
-                            <div class="col-sm-3"><select class="form-control"  id="alerttype" required [(ngModel)]="loanalert.alerttype" name="alerttype" ><option selected>--Select--</option>
-                                <option >System</option>
-                                <option >User</option></select> </div>
-                            <label class="col-sm-3 ">Alert Exp. Date:</label>
-                           <div class="col-sm-3"> <input type="text" class="form-control" id="alertexpdate" required [(ngModel)]="loanalert.alertexpdate" name="alertexpdate" ></div>
-                           </div>
-                    <br>
-                    <div class="row">
+      <th>
+        <i class="fas fa-table"></i>
+        Loan Alert
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="text-left">
+            <br />
+            <button type="submit" class="btn btn-primary">Save</button>&nbsp;
+            <button
+              (click)="onCancel()"
+              type="button"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <table class="table table-bordered">
+                <thead class="thead-info">
+                  <tr class="bg-primary text-light">
+                    <th>Loan Alert Information</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="container-fluid">
+                        <div class="form-group text-info">
+                          <div class="row">
+                            <label class="col-sm-3">Alert Type: </label>
+                            <div class="col-sm-3">
+                              <select
+                                class="form-control"
+                                id="alerttype"
+                                required
+                                ngModel
+                                name="alerttype"
+                                ><option selected>--Select--</option>
+                                <option>System</option>
+                                <option>User</option></select
+                              >
+                            </div>
+                            <label class="col-sm-3">Alert Exp. Date:</label>
+                            <div class="col-sm-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="alertexpdate"
+                                required
+                                ngModel
+                                name="alertexpdate"
+                              />
+                            </div>
+                          </div>
+                          <br />
+                          <div class="row">
                             <label class="col-sm-3">Alert Date:</label>
-                           <div class="col-sm-3"> <input type="text" class="form-control" id="alertdate" required [(ngModel)]="loanalert.alertdate" name="alertdate"  ></div>
-                            <label class="col-sm-3 ">Alert Status:</label>
-                           <div class="col-sm-3"><select class="form-control" id="alertstatus" required [(ngModel)]="loanalert.alertstatus" name="alertstatus" ><option selected>--Select--</option> 
-                               <option >Active</option>
-                        <option>Inactive</option>
-                               </select> </div>
-                    </div>
-                     <br>
-                    <div class="row">
-                            <label class="col-sm-3 ">Alert Amt:</label>
-                             <div class="col-sm-3"> <input type="text" class="form-control" id="alertamt" required [(ngModel)]="loanalert.alertamt" name="alertamt" ></div>
-                            <label class="col-sm-3 ">Alert Severity:</label>
-                             <div class="col-sm-3"><select class="form-control" id="alertseverity" required [(ngModel)]="loanalert.alertseverity" name="alertseverity"  ><option selected>--Select--</option> 
-                                 <option >Critical</option>
-                                 <option >General Tracking</option></select> </div>
-                     </div>
-                      <br>              
-                    <div class="row">
-                            <label class="col-sm-3 ">Alert Note:</label>
-                               <div class="col-sm-3"> <input type="text" class="form-control" id="alertnote" required [(ngModel)]="loanalert.alertnote" name="alertnote" ></div>
-                         <label class="col-sm-3 ">Alert Desc.:</label>
-                             <div class="col-sm-3"><select class="form-control" id="alertdescription" required [(ngModel)]="loanalert.alertdescription" name="alertdescription" >><option selected>--Select--</option> 
-                                <option >Max Claim Amt>95%</option>
-                                 <option >Borrower Death</option>
-                                 <option >Co-Borrower Death</option>
-                                 <option >Payments Suspended</option>
-                                 <option >Claim Type 21-DIL/FCL</option>
-                                 <option >Claim Yype 22-Assign</option>
-                                 <option >Pay Plan change not activated</option>
-                        <option >Test Alert</option>
-                        <option >Active Bnkr-Chapter 7</option>
-                        <option >Active Bnkr-Chapter 13</option>
-                        <option >Foreclosure</option>
-                        <option >FCL HUD</option>
-                                 </select> </div>
-                         </div>
-                    <br>
-                    <div class="row">
-                        <label class="col-sm-3 ">Upload Status:</label>
-                             <div class="col-sm-3"><select class="form-control" id="uploadstatus" required [(ngModel)]="loanalert.uploadstatus" name="uploadstatus"  ><option selected>--Select--</option> 
-                                 <option >Success</option>
-                                 <option >Error</option>
-                                 <option >Warning</option></select> </div>
-                        <label class="col-sm-3 ">Cust. Care Indicator:</label>
-                         <div class="col-sm-3"><input type="checkbox" class="form-control" value="" id="custindicator" required [(ngModel)]="loanalert.custindicator" name="custindicator" > </div>                    
-                    </div>
-                </div>
-             
-           
+                            <div class="col-sm-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="alertdate"
+                                required
+                                ngModel
+                                name="alertdate"
+                              />
+                            </div>
+                            <label class="col-sm-3">Alert Status:</label>
+                            <div class="col-sm-3">
+                              <select
+                                class="form-control"
+                                id="alertstatus"
+                                required
+                                ngModel
+                                name="alertstatus"
+                                ><option selected>--Select--</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                              </select>
+                            </div>
+                          </div>
+                          <br />
+                          <div class="row">
+                            <label class="col-sm-3">Alert Amt:</label>
+                            <div class="col-sm-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="alertamt"
+                                required
+                                ngModel
+                                name="alertamt"
+                              />
+                            </div>
+                            <label class="col-sm-3">Alert Severity:</label>
+                            <div class="col-sm-3">
+                              <select
+                                class="form-control"
+                                id="alertseverity"
+                                required
+                                ngModel
+                                name="alertseverity"
+                                ><option selected>--Select--</option>
+                                <option>Critical</option>
+                                <option>General Tracking</option></select
+                              >
+                            </div>
+                          </div>
+                          <br />
+                          <div class="row">
+                            <label class="col-sm-3">Alert Note:</label>
+                            <div class="col-sm-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="alertnote"
+                                required
+                                ngModel
+                                name="alertnote"
+                              />
+                            </div>
+                            <label class="col-sm-3">Alert Desc.:</label>
+                            <div class="col-sm-3">
+                              <select
+                                class="form-control"
+                                id="alertdescription"
+                                required
+                                ngModel
+                                name="alertdescription"
+                                >><option selected>--Select--</option>
+                                <option>Max Claim Amt>95%</option>
+                                <option>Borrower Death</option>
+                                <option>Co-Borrower Death</option>
+                                <option>Payments Suspended</option>
+                                <option>Claim Type 21-DIL/FCL</option>
+                                <option>Claim Yype 22-Assign</option>
+                                <option>Pay Plan change not activated</option>
+                                <option>Test Alert</option>
+                                <option>Active Bnkr-Chapter 7</option>
+                                <option>Active Bnkr-Chapter 13</option>
+                                <option>Foreclosure</option>
+                                <option>FCL HUD</option>
+                              </select>
+                            </div>
+                          </div>
+                          <br />
+                          <div class="row">
+                            <label class="col-sm-3">Upload Status:</label>
+                            <div class="col-sm-3">
+                              <select
+                                class="form-control"
+                                id="uploadstatus"
+                                required
+                                ngModel
+                                name="uploadstatus"
+                                ><option selected>--Select--</option>
+                                <option>Success</option>
+                                <option>Error</option>
+                                <option>Warning</option></select
+                              >
+                            </div>
+                            <label class="col-sm-3"
+                              >Cust. Care Indicator:</label
+                            >
+                            <div class="col-sm-3">
+                              <input
+                                type="checkbox"
+                                class="form-control"
+                                value=""
+                                id="custindicator"
+                                required
+                                ngModel
+                                name="custindicator"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-    </td>
+          </div>
+        </form>
+      </th>
     </tr>
-            </table>
-        </div>
-        </div>
-    </form>
-            </th>
-        </tr>
-    </tbody>
-    </table>
+  </tbody>
+</table>

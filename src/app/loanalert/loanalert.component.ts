@@ -1,50 +1,69 @@
+import { EditloanService } from './../loanedit/editloan/editloan.service';
+import { map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { LoanalertService } from './../loanalert.service';
 import { Component, OnInit } from '@angular/core';
-import{Router}from '@angular/router';
+import { Router } from '@angular/router';
 import { Loanalert } from '../loanalert';
 
 @Component({
   selector: 'app-loanalert',
   templateUrl: './loanalert.component.html',
-  styleUrls: ['./loanalert.component.css']
+  styleUrls: ['./loanalert.component.css'],
 })
 export class LoanalertComponent implements OnInit {
+  loanalertsdb: Observable<Loanalert[]>;
+  loanalerts: any[];
+  constructor(
+    private loanalertService: LoanalertService,
+    private router: Router,
+    private db: AngularFirestore,
+    private editloan:EditloanService
+  ) {}
 
-  loanalerts:Observable<Loanalert[]>;
-  constructor(private loanalertService:LoanalertService ,private router:Router) { }
+  ngOnInit(): void {
+    this.loanalertsdb = this.db
+      .collection('LoanAlert')
+      .snapshotChanges()
+      .pipe(
+        map((re) => {
+          return re.map((re) => {
+            const data = re.payload.doc.data() as any;
+            const id = re.payload.doc.id;
+            return { id, ...data };
+          });
+        })
+      );
+    this.loanalertsdb.subscribe((re) => {
+      console.log(re);
+      this.loanalerts = re;
+    });
+  }
 
-  ngOnInit() :void{
-   
-  }
- 
-  deleteLoanalert(rowno: number) {
-    this.loanalertService.deleteLoanalert(rowno)
-      .subscribe(
-        data => {
-          console.log(data);
-         
-         
-        },
-        error => console.log(error));
+  deleteLoanalert(id: number) {
+    this.db
+      .doc(`LoanAlert/${id}`)
+      .delete()
+      .then((re) => {
+        console.log('Dekleted');
+      })
+      .catch((re) => {
+        console.log('Not Deleted');
+      });
   }
 
-
-  editLoanalert(rowno: number){
-    this.router.navigate(['alertedit', rowno]);
+  editLoanalert(id: string) {
+    this.editloan.seteditloanaletid(id)
+    this.router.navigate(['alertedit']);
   }
-  onSubmit()
-  {
-    this.router.navigate(['/alertform'])
+  onSubmit() {
+    this.router.navigate(['/alertform']);
   }
-  onBack()
-  {
-      this.router.navigate(['loanvendor']);
+  onBack() {
+    this.router.navigate(['loanvendor']);
   }
-    onNext()
-  {
+  onNext() {
     this.router.navigate(['payplan']);
-  
   }
-
 }
