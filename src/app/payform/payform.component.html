@@ -1,21 +1,20 @@
-<table class="table table-bordered">
-  <tbody>
+
     <i class="fas fa-table"></i>
     <b> Loan Pay Plan</b>
     <br />
     <br />
-    <form (ngSubmit)="onSubmit()">
+
     <div class="text-leftt">
       <button (click)="onSubmit()" class="btn btn-primary">Save</button>&nbsp;
       <button (click)="onCancel()" type="button" class="btn btn-secondary">
         Cancel
       </button>
-
+    </div>
     <br />
     <br />
+    <form (ngSubmit)="onSubmit()">
     <div class="row justify-content-center">
       <div class="col-auto">
-
           <table class="table table-bordered">
             <thead class="thead-info">
               <tr class="bg-primary text-light">
@@ -328,10 +327,6 @@
               </tr>
             </tbody>
           </table>
-
       </div>
     </div>
-    </div>
     </form>
-  </tbody>
-</table>
