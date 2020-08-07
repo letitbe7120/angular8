@@ -117,8 +117,16 @@
               "devServerTarget": "optiam:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "optiam"
+    }
+  },
+  "defaultProject": "optiam",
+  "cli": {
+    "analytics": false
+  }
 }

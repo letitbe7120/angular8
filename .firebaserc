@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-8c1ee": {
+      "hosting": {
+        "optiam": [
+          "angular-8c1ee"
+        ]
+      }
+    }
+  }
+}
