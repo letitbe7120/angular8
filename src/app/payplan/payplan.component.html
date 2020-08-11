@@ -49,12 +49,12 @@
               <tr *ngFor="let payplan of payplan1">
                 <td>{{ payplan.rowno }}</td>
                 <td>
-                  <button (click)="deletePayplan(payplan.id)">
+                  <button class="btn btn-danger" (click)="deletePayplan(payplan.id)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </td>
                 <td>
-                  <button (click)="editPayplan(payplan.id)">
+                  <button class="btn btn-success" (click)="editPayplan(payplan.id)">
                     <i class="fas fa-pen"></i>
                   </button>
                 </td>

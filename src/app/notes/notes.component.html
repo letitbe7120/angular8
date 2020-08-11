@@ -30,12 +30,12 @@
               <td>{{ notes.rowno }}</td>
 
               <td>
-                <button (click)="deleteNotes(notes.id)">
+                <button class="btn btn-danger" (click)="deleteNotes(notes.id)">
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
               <td>
-                <button (click)="editNotes(notes.id)">
+                <button class="btn btn-success" (click)="editNotes(notes.id)">
                   <i class="fas fa-pen"></i>
                 </button>
               </td>
