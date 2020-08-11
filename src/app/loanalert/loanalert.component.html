@@ -15,7 +15,6 @@
         <table class="table table-bordered table-sm">
           <thead>
             <tr class="bg-info text-light">
-              <th>Row No</th>
               <th>Delete</th>
               <th>Edit</th>
               <th>Alert Date</th>
@@ -32,7 +31,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let loanalert of loanalerts">
-              <td>{{ loanalert.rowno }}</td>
 
               <td>
                 <button class="btn btn-danger" (click)="deleteLoanalert(loanalert.id)">

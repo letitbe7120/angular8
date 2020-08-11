@@ -16,7 +16,6 @@
         <table style="text-align: center;" class="table table-bordered">
           <thead>
             <tr class="bg-info text-light">
-              <th>Row No</th>
               <th>Delete</th>
               <th>Edit</th>
               <th>Vendor Company Name</th>
@@ -24,7 +23,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let loanvendor of loanvendors ">
-              <td>{{ loanvendor.rowno }}</td>
 
               <td>
                 <button class="btn btn-danger" (click)="deleteLoanvendor(loanvendor.id)">

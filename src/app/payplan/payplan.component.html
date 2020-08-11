@@ -16,7 +16,6 @@
           <table class="table table-bordered table-sm text-sm">
             <thead>
               <tr class="bg-info text-light">
-                <th>Row No</th>
                 <th>Delete</th>
                 <th>Edit</th>
                 <th>Pay Plan Type</th>
@@ -47,7 +46,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let payplan of payplan1">
-                <td>{{ payplan.rowno }}</td>
                 <td>
                   <button class="btn btn-danger" (click)="deletePayplan(payplan.id)">
                     <i class="fas fa-trash-alt"></i>

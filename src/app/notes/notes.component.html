@@ -16,7 +16,6 @@
         <table style="text-align: center;" class="table table-bordered">
           <thead>
             <tr class="bg-info text-light">
-              <th>Row No</th>
               <th>Delete</th>
               <th>Edit</th>
               <th>Note Text</th>
@@ -27,7 +26,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let notes of notes">
-              <td>{{ notes.rowno }}</td>
 
               <td>
                 <button class="btn btn-danger" (click)="deleteNotes(notes.id)">
