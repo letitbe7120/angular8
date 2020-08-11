@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<table>
+<table style="width: 100%;">
   <tr>
     <th>
       <i class="fas fa-table"></i>
@@ -27,7 +27,6 @@
                 <th>Rate Margin</th>
                 <th>Net Monthly Payment</th>
                 <th>Disbursement Tenure</th>
-                <th>Payplan Tenure</th>
                 <th>Pay Plan Term (in months)</th>
                 <th>Disbursement Term</th>
                 <th>Periodic Cap</th>
@@ -51,7 +50,7 @@
                 <td>{{ payplan.rowno }}</td>
                 <td>
                   <button (click)="deletePayplan(payplan.id)">
-                    <i class="fas fa-dustbin"></i>
+                    <i class="fas fa-trash-alt"></i>
                   </button>
                 </td>
                 <td>
@@ -62,10 +61,11 @@
                 <td>{{ payplan.paytype }}</td>
                 <td>{{ payplan.ratetype }}</td>
                 <td>{{ payplan.creditline }}</td>
+                <td>{{ payplan.netavailable }}</td>
+                <td>{{ payplan.credlineadj }}</td>
                 <td>{{ payplan.ratemargin }}</td>
                 <td>{{ payplan.monthlypayment }}</td>
                 <td>{{ payplan.disbusrsment }}</td>
-                <td>{{ payplan.paytenure }}</td>
                 <td>{{ payplan.payterm }}</td>
                 <td>{{ payplan.disbursmentterm }}</td>
                 <td>{{ payplan.periodic }}</td>
@@ -76,6 +76,7 @@
                 <td>{{ payplan.semipayment }}</td>
                 <td>{{ payplan.lineofcredit }}</td>
                 <td>{{ payplan.actiondate }}</td>
+                <td>{{ payplan.modifiedtenture }}</td>
                 <td>{{ payplan.modified }}</td>
                 <td>{{ payplan.creditside }}</td>
                 <td>{{ payplan.service }}</td>

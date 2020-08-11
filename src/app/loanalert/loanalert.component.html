@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<table>
+<table style="width: 100%;">
   <tr>
     <th>
       <i class="fas fa-table"></i>
@@ -19,6 +19,7 @@
               <th>Delete</th>
               <th>Edit</th>
               <th>Alert Date</th>
+              <th>Alert Type</th>
               <th>Alert Expiration Date</th>
               <th>Custodial Care Indicator Alert</th>
               <th>Alert Amt</th>
@@ -35,7 +36,7 @@
 
               <td>
                 <button (click)="deleteLoanalert(loanalert.id)">
-                  <i class="fas fa-dustbin"></i>
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
               <td>
@@ -47,9 +48,10 @@
               <td>{{ loanalert.alertdate }}</td>
               <td>{{ loanalert.alertexpdate }}</td>
               <td>{{ loanalert.custindicator }}</td>
-                    <td>{{ loanalert.custindicator }}</td>
-                          <td>{{ loanalert.alertamt }}</td>
-                                <td>{{ loanalert.alertnote }}</td>
+
+              <td>{{ loanalert.alertamt }}</td>
+
+              <td>{{ loanalert.alertnote }}</td>
 
                                       <td>{{ loanalert.alertdescription }}</td>
                                             <td>{{ loanalert.alertseverity }}</td>

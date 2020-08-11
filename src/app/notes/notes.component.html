@@ -1,5 +1,6 @@
 <router-outlet></router-outlet>
-<table>
+
+<table style="width: 100%;">
   <tr>
     <th>
       <i class="fas fa-table"></i>
@@ -12,7 +13,7 @@
       <br />
       <br />
       <div class="table-responsive">
-        <table class="table table-bordered">
+        <table style="text-align: center;" class="table table-bordered">
           <thead>
             <tr class="bg-primary text-light">
               <th>Row No</th>
@@ -30,7 +31,7 @@
 
               <td>
                 <button (click)="deleteNotes(notes.id)">
-                  <i class="fas fa-dustbin"></i>
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
               <td>
