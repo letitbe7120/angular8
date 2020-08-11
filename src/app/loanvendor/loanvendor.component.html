@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<table style="width: 100%;text-align: center;">
+<table style="width: 100%">
   <tr>
     <th>
       <i class="fas fa-table"></i>
@@ -7,15 +7,15 @@
 
       <div class="text-left">
         <br />
-        <button (click)="onSubmit()" type="button" class="btn btn-primary">
+        <button (click)="onSubmit()" type="button" class="btn btn-info">
           Add Loan Vendor
         </button>
       </div>
       <br />
       <div class="table-responsive">
-        <table class="table table-bordered">
+        <table style="text-align: center;" class="table table-bordered">
           <thead>
-            <tr class="bg-primary text-light">
+            <tr class="bg-info text-light">
               <th>Row No</th>
               <th>Delete</th>
               <th>Edit</th>
@@ -46,7 +46,7 @@
         <button (click)="onBack()" type="button" class="btn btn-secondary btn">
           Back</button
         >&nbsp;
-        <button (click)="onNext()" type="button" class="btn btn-primary">
+        <button (click)="onNext()" type="button" class="btn btn-info">
           Next
         </button>
       </div>
